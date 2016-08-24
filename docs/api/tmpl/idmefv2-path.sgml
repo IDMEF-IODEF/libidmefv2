@@ -1,0 +1,372 @@
+<!-- ##### SECTION Title ##### -->
+idmefv2-path
+
+<!-- ##### SECTION Short_Description ##### -->
+
+The High level IDMEFV2 API.
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+The IDMEFV2 path API provide a methodes to define a "path" in the IDMEFV2 tree. 
+Once this path is defined, the user might set or retrieve this path.
+
+</para>
+
+<para>
+Here is an example of how to use this API in order to set a given path within
+a #idmefv2_message_t root object:
+</para>
+
+<para>
+First, we need to create a path to the object we want to create. If for example,
+we wish to create the alert.classification.text path within our message, we will use:
+
+<programlisting>
+int ret;
+idmefv2_path_t *path;
+
+ret = idmefv2_path_new(&amp;path, "alert.classification.text");
+if ( ret &lt; 0 )
+        return ret;
+</programlisting>
+
+Using the above, we just created a "pointer" to a given path in our #idmefv2_message_t. This
+path doesn't yet exist, but might be used to read, or to write a value.
+
+<programlisting>
+int ret;
+idmefv2_value_t *value;
+
+ret = idmefv2_value_new_from_path(&amp;value, path, "A value");
+if ( ret &lt; 0 )
+        return ret;
+</programlisting>
+
+Here we just created a value applicable to the previously created path. That is, if our path
+is pointing to a value of type string, the created #idmefv2_value_t object will be of this type.
+
+<programlisting>
+idmefv2_message_t *idmefv2;
+
+/* 
+ * create our top message 
+ */
+ret = idmefv2_message_new(&amp;idmefv2);
+
+/*
+ * Set the previously defined path to the previously created value
+ * in the top level idmefv2 message 'idmefv2'.
+ */
+ret = idmefv2_path_set(path, idmefv2, value);
+</programlisting>
+
+And finally, we create our top level #idmefv2_message_t object and set the created #idmefv2_value_t 
+as the value for our created #idmefv2_path_t.
+</para>
+
+<para>
+
+Given our previous example, we can write the following function:
+
+<programlisting>
+static int set_idmefv2_path(idmefv2_message_t *message, const char *pathname, const char *value)
+{
+        int ret;
+        idmefv2_value_t *val;
+        idmefv2_path_t *path;
+        
+        ret = idmefv2_path_new(&amp;path, pathname);
+        if ( ret &lt; 0 )
+                return ret;
+
+        ret = idmefv2_value_new_from_path(&amp;val, path, value);
+        if ( ret &lt; 0 ) {
+                idmefv2_path_destroy(path);
+                return ret;
+        }
+
+        ret = idmefv2_path_set(path, message, val);
+
+        idmefv2_value_destroy(val);
+        idmefv2_path_destroy(path);
+        
+        return ret;
+}
+</programlisting>
+
+You will then be able to set any field of the IDMEFV2 message using:
+
+<programlisting>
+idmefv2_message_t *idmefv2;
+
+ret = idmefv2_message_new(&amp;idmefv2);
+if ( ret &lt; 0 )
+        return ret;
+
+set_idmefv2_path(idmefv2, "alert.classification.text", "My classification text");
+set_idmefv2_path(idmefv2, "alert.classification.reference(0).name", "OSVDB-XXXX");
+set_idmefv2_path(idmefv2, "alert.classification.reference(0).origin", "osvdb");
+set_idmefv2_path(idmefv2, "alert.classification.reference(0).url", "http://my.url/");
+set_idmefv2_path(idmefv2, "alert.source(0).node.address(0).address", "127.0.0.1");
+</programlisting>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#idmefv2_value_t for setting #idmefv2_path_t value.
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### TYPEDEF idmefv2_path_t ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION idmefv2_path_get ##### -->
+<para>
+
+</para>
+
+@path: 
+@message: 
+@ret: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_set ##### -->
+<para>
+
+</para>
+
+@path: 
+@message: 
+@value: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_new ##### -->
+<para>
+
+</para>
+
+@path: 
+@format: 
+@...: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_new_v ##### -->
+<para>
+
+</para>
+
+@path: 
+@format: 
+@args: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_new_fast ##### -->
+<para>
+
+</para>
+
+@path: 
+@buffer: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_get_class ##### -->
+<para>
+
+</para>
+
+@path: 
+@depth: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_get_value_type ##### -->
+<para>
+
+</para>
+
+@path: 
+@depth: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_set_index ##### -->
+<para>
+
+</para>
+
+@path: 
+@depth: 
+@index: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_undefine_index ##### -->
+<para>
+
+</para>
+
+@path: 
+@depth: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_get_index ##### -->
+<para>
+
+</para>
+
+@path: 
+@depth: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_make_child ##### -->
+<para>
+
+</para>
+
+@path: 
+@child_name: 
+@index: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_make_parent ##### -->
+<para>
+
+</para>
+
+@path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_destroy ##### -->
+<para>
+
+</para>
+
+@path: 
+
+
+<!-- ##### FUNCTION idmefv2_path_ncompare ##### -->
+<para>
+
+</para>
+
+@p1: 
+@p2: 
+@depth: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_compare ##### -->
+<para>
+
+</para>
+
+@p1: 
+@p2: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_clone ##### -->
+<para>
+
+</para>
+
+@src: 
+@dst: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_ref ##### -->
+<para>
+
+</para>
+
+@path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_get_name ##### -->
+<para>
+
+</para>
+
+@path: 
+@depth: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_is_ambiguous ##### -->
+<para>
+
+</para>
+
+@path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_has_lists ##### -->
+<para>
+
+</para>
+
+@path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_is_list ##### -->
+<para>
+
+</para>
+
+@path: 
+@depth: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_get_depth ##### -->
+<para>
+
+</para>
+
+@path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_check_operator ##### -->
+<para>
+
+</para>
+
+@path: 
+@op: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_path_get_applicable_operators ##### -->
+<para>
+
+</para>
+
+@path: 
+@result: 
+@Returns: 
+
+

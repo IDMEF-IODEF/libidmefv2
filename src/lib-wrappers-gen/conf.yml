@@ -1,0 +1,79 @@
+  -
+    src: templates/generate-top-level-class-print-json.h.mako
+    dst: ../include/idmefv2-message-print-json.h
+    schema: idmefv2
+
+  -
+    src: templates/generate-top-level-class-read-json.c.mako
+    dst: ../idmefv2-message-read-json.c
+    schema: idmefv2
+
+  -
+    src: templates/generate-tree-wrap.h.mako
+    dst: ../include/idmefv2-tree-wrap.h
+    schema: idmefv2
+
+  -
+    src: templates/generate-top-level-class-print.h.mako
+    dst: ../include/idmefv2-message-print.h
+    schema: idmefv2
+
+  -
+    src: templates/generate-top-level-class-read.h.mako
+    dst: ../include/idmefv2-message-read.h
+    schema: idmefv2
+
+  -
+    src: templates/generate-top-level-class-write.h.mako
+    dst: ../include/idmefv2-message-write.h
+    schema: idmefv2
+
+  -
+    src: templates/generate-top-level-class-id.h.mako
+    dst: ../include/idmefv2-message-id.h
+    schema: idmefv2
+
+  -
+    src: templates/generate-tree-data.h.mako
+    dst: ../include/idmefv2-tree-data.h
+    schema: idmefv2
+
+  -
+    src: templates/generate-top-level-class-write.c.mako
+    dst: ../idmefv2-message-write.c
+    schema: idmefv2
+
+  -
+    src: templates/generate-top-level-class-read.c.mako
+    dst: ../idmefv2-message-read.c
+    schema: idmefv2
+
+  -
+    src: templates/generate-top-level-class-print.c.mako
+    dst: ../idmefv2-message-print.c
+    schema: idmefv2
+
+  -
+    src: templates/generate-tree-wrap.hxx.mako
+    dst: ../../bindings/c++/include/idmefv2-tree-wrap.hxx
+    schema: idmefv2
+
+  -
+    src: templates/generate-value-class-swig-mapping.i.mako
+    dst: ../../bindings/low-level/idmefv2-value-class-mapping.i
+    schema: idmefv2
+
+  -
+    src: templates/generate-tree-wrap.cxx.mako
+    dst: ../../bindings/c++/idmefv2-tree-wrap.cxx
+    schema: idmefv2
+
+  -
+    src: templates/generate-tree-wrap.c.mako
+    dst: ../idmefv2-tree-wrap.c
+    schema: idmefv2
+
+  -
+    src: templates/generate-top-level-class-print-json.c.mako
+    dst: ../idmefv2-message-print-json.c
+    schema: idmefv2

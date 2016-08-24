@@ -1,0 +1,314 @@
+<!-- ##### SECTION Title ##### -->
+idmefv2-criteria
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM idmefv2_criterion_operator_t ##### -->
+<para>
+
+</para>
+
+@IDMEFV2_CRITERION_OPERATOR_NOT: 
+@IDMEFV2_CRITERION_OPERATOR_NOCASE: 
+@IDMEFV2_CRITERION_OPERATOR_EQUAL: 
+@IDMEFV2_CRITERION_OPERATOR_EQUAL_NOCASE: 
+@IDMEFV2_CRITERION_OPERATOR_NOT_EQUAL: 
+@IDMEFV2_CRITERION_OPERATOR_NOT_EQUAL_NOCASE: 
+@IDMEFV2_CRITERION_OPERATOR_LESSER: 
+@IDMEFV2_CRITERION_OPERATOR_LESSER_OR_EQUAL: 
+@IDMEFV2_CRITERION_OPERATOR_GREATER: 
+@IDMEFV2_CRITERION_OPERATOR_GREATER_OR_EQUAL: 
+@IDMEFV2_CRITERION_OPERATOR_SUBSTR: 
+@IDMEFV2_CRITERION_OPERATOR_SUBSTR_NOCASE: 
+@IDMEFV2_CRITERION_OPERATOR_NOT_SUBSTR: 
+@IDMEFV2_CRITERION_OPERATOR_NOT_SUBSTR_NOCASE: 
+@IDMEFV2_CRITERION_OPERATOR_REGEX: 
+@IDMEFV2_CRITERION_OPERATOR_REGEX_NOCASE: 
+@IDMEFV2_CRITERION_OPERATOR_NOT_REGEX: 
+@IDMEFV2_CRITERION_OPERATOR_NOT_REGEX_NOCASE: 
+@IDMEFV2_CRITERION_OPERATOR_NULL: 
+@IDMEFV2_CRITERION_OPERATOR_NOT_NULL: 
+
+<!-- ##### TYPEDEF idmefv2_criteria_t ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### TYPEDEF idmefv2_criterion_t ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION idmefv2_criterion_operator_to_string ##### -->
+<para>
+
+</para>
+
+@op: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criterion_new ##### -->
+<para>
+
+</para>
+
+@criterion: 
+@path: 
+@value: 
+@op: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criterion_destroy ##### -->
+<para>
+
+</para>
+
+@criterion: 
+
+
+<!-- ##### FUNCTION idmefv2_criterion_clone ##### -->
+<para>
+
+</para>
+
+@criterion: 
+@dst: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criterion_print ##### -->
+<para>
+
+</para>
+
+@criterion: 
+@fd: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criterion_to_string ##### -->
+<para>
+
+</para>
+
+@criterion: 
+@out: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criterion_get_path ##### -->
+<para>
+
+</para>
+
+@criterion: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criterion_get_value ##### -->
+<para>
+
+</para>
+
+@criterion: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criterion_get_operator ##### -->
+<para>
+
+</para>
+
+@criterion: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criterion_match ##### -->
+<para>
+
+</para>
+
+@criterion: 
+@message: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_new ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_ref ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_destroy ##### -->
+<para>
+
+</para>
+
+@criteria: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_clone ##### -->
+<para>
+
+</para>
+
+@src: 
+@dst: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_print ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@fd: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_to_string ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@out: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_is_criterion ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_get_criterion ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_set_criterion ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@criterion: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_or_criteria ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@criteria2: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_and_criteria ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@criteria2: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_match ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@message: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_get_or ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_get_and ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_new_from_string ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@str: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_get_negation ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_criteria_set_negation ##### -->
+<para>
+
+</para>
+
+@criteria: 
+@negate: 
+
+

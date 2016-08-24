@@ -1,0 +1,39 @@
+/*****
+*
+* Copyright (C) 2008-2016 CS-SI. All Rights Reserved.
+* Author: Yoann Vandoorselaere <yoann.v@libidmefv2-ids.com>
+*
+* This file is part of the LibIdemfv2 library.
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation; either version 2, or (at your option)
+* any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License along
+* with this program; if not, write to the Free Software Foundation, Inc.,
+* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+*
+*****/
+
+
+int idmefv2_message_set_value(idmefv2_message_t *message, const char *path, idmefv2_value_t *value);
+
+int idmefv2_message_get_value(idmefv2_message_t *message, const char *path, idmefv2_value_t **value);
+
+int idmefv2_message_set_string(idmefv2_message_t *message, const char *path, const char *value);
+
+int idmefv2_message_get_string(idmefv2_message_t *message, const char *path, char **result);
+
+int idmefv2_message_set_number(idmefv2_message_t *message, const char *path, double number);
+
+int idmefv2_message_get_number(idmefv2_message_t *message, const char *path, double *result);
+
+int idmefv2_message_set_data(idmefv2_message_t *message, const char *path, const unsigned char *data, size_t size);
+
+int idmefv2_message_get_data(idmefv2_message_t *message, const char *path, unsigned char **data, size_t *size);

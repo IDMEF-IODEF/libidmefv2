@@ -1,0 +1,345 @@
+<!-- ##### SECTION Title ##### -->
+idmefv2-message-write
+
+<!-- ##### SECTION Short_Description ##### -->
+
+Writing IDMEFV2 class to a message buffer
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+If you're not willing to use the libidmefv2_client_send_idmefv2() function, because for
+example you want more control over how a message is sent, you can use the idmefv2-message-write
+API to send your message manually.
+</para>
+
+<para>
+The functions defined in this API all take an IDMEFV2 object as an argument and
+dump this object in a format suitable for writing it to a socket or a file 
+(covering, for example, convertion from host byte order to network byte order), 
+to the provided #libidmefv2_msgbuf_t buffer.
+</para>
+
+<para>
+The #libidmefv2_msgbuf_t object is just a buffer holding a #libidmefv2_msg_t object. When
+the buffer is full, the user defined function for #libidmefv2_msgbuf_t will be called,
+and the user can write his message using the libidmefv2_msg_write() function.
+</para>
+
+<para>
+<programlisting>
+idmefv2_message_write(message, msgbuf);
+</programlisting>
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#libidmefv2_msgbuf_t
+#libidmefv2_msg_t
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION idmefv2_additional_data_write ##### -->
+<para>
+
+</para>
+
+@additional_data: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_reference_write ##### -->
+<para>
+
+</para>
+
+@reference: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_classification_write ##### -->
+<para>
+
+</para>
+
+@classification: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_user_id_write ##### -->
+<para>
+
+</para>
+
+@user_id: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_user_write ##### -->
+<para>
+
+</para>
+
+@user: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_address_write ##### -->
+<para>
+
+</para>
+
+@address: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_process_write ##### -->
+<para>
+
+</para>
+
+@process: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_web_service_write ##### -->
+<para>
+
+</para>
+
+@web_service: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_snmp_service_write ##### -->
+<para>
+
+</para>
+
+@snmp_service: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_service_write ##### -->
+<para>
+
+</para>
+
+@service: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_node_write ##### -->
+<para>
+
+</para>
+
+@node: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_source_write ##### -->
+<para>
+
+</para>
+
+@source: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_file_access_write ##### -->
+<para>
+
+</para>
+
+@file_access: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_inode_write ##### -->
+<para>
+
+</para>
+
+@inode: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_checksum_write ##### -->
+<para>
+
+</para>
+
+@checksum: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_file_write ##### -->
+<para>
+
+</para>
+
+@file: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_linkage_write ##### -->
+<para>
+
+</para>
+
+@linkage: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_target_write ##### -->
+<para>
+
+</para>
+
+@target: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_analyzer_write ##### -->
+<para>
+
+</para>
+
+@analyzer: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_alertident_write ##### -->
+<para>
+
+</para>
+
+@alertident: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_impact_write ##### -->
+<para>
+
+</para>
+
+@impact: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_action_write ##### -->
+<para>
+
+</para>
+
+@action: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_confidence_write ##### -->
+<para>
+
+</para>
+
+@confidence: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_assessment_write ##### -->
+<para>
+
+</para>
+
+@assessment: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_tool_alert_write ##### -->
+<para>
+
+</para>
+
+@tool_alert: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_correlation_alert_write ##### -->
+<para>
+
+</para>
+
+@correlation_alert: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_overflow_alert_write ##### -->
+<para>
+
+</para>
+
+@overflow_alert: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_alert_write ##### -->
+<para>
+
+</para>
+
+@alert: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_heartbeat_write ##### -->
+<para>
+
+</para>
+
+@heartbeat: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_message_write ##### -->
+<para>
+
+</para>
+
+@message: 
+@msg: 
+@Returns: 
+
+

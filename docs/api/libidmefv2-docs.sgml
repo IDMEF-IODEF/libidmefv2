@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<book id="index" xmlns:xi="http://www.w3.org/2003/XInclude">
+  <bookinfo>
+    <title>LibIdemfv2 library Reference Manual</title>
+  </bookinfo>
+
+  <part>
+    <title>Using libidmefv2 to interoperate with libidmefv2-manager</title>
+    <xi:include href="xml/libidmefv2.xml"/>
+    <xi:include href="xml/libidmefv2-client.xml"/>
+  </part>
+
+  <part>
+    <title>Sending events with libidmefv2</title>
+    <chapter>
+      <title>The low level IDMEFV2 API</title>
+      <xi:include href="xml/idmefv2-tree-wrap.xml"/>
+      <xi:include href="xml/idmefv2-additional-data.xml"/>
+      <xi:include href="xml/idmefv2-time.xml"/>
+      <xi:include href="xml/idmefv2-data.xml"/>
+    </chapter>
+
+    <chapter>
+      <title>The high level IDMEFV2 API</title>
+      <xi:include href="xml/idmefv2-path.xml"/>
+      <xi:include href="xml/idmefv2-value.xml"/>
+    </chapter>
+  </part>
+
+  <part>
+    <title>Reading events from the collector</title>
+    <xi:include href="xml/idmefv2-message-read.xml"/>
+    <xi:include href="xml/libidmefv2-connection-pool.xml"/>
+  </part>
+
+  <part>
+    <title>Filtering operation on IDMEFV2 messages</title>
+    <xi:include href="xml/idmefv2-criteria.xml"/>
+    <xi:include href="xml/idmefv2-criterion-value.xml"/>
+  </part>
+
+  <chapter>
+    <title>Utility functions</title>
+    <xi:include href="xml/idmefv2-message-print.xml"/>
+  </chapter>
+
+  <chapter>
+    <title>Others</title>
+    <xi:include href="xml/libidmefv2-error.xml"/>
+    <xi:include href="xml/libidmefv2-linked-object.xml"/>
+    <xi:include href="xml/libidmefv2-io.xml"/>
+    <xi:include href="xml/libidmefv2-log.xml"/>
+    <xi:include href="xml/libidmefv2-msg.xml"/>
+    <xi:include href="xml/libidmefv2-option.xml"/>
+    <xi:include href="xml/libidmefv2-connection.xml"/>
+    <xi:include href="xml/libidmefv2-string.xml"/>
+    <xi:include href="xml/libidmefv2-msgbuf.xml"/>
+    <xi:include href="xml/idmefv2-message-write.xml"/>
+    <xi:include href="xml/libidmefv2-ident.xml"/>
+    <xi:include href="xml/libidmefv2-client-profile.xml"/>
+    <xi:include href="xml/libidmefv2-plugin.xml"/>
+    <xi:include href="xml/libidmefv2-hash.xml"/>
+    <xi:include href="xml/libidmefv2-failover.xml"/>
+    <xi:include href="xml/libidmefv2-async.xml"/>
+    <xi:include href="xml/libidmefv2-list.xml"/>
+    <xi:include href="xml/libidmefv2-inttypes.xml"/>
+    <xi:include href="xml/libidmefv2-option-wide.xml"/>
+    <xi:include href="xml/libidmefv2-timer.xml"/>
+  </chapter>
+</book>

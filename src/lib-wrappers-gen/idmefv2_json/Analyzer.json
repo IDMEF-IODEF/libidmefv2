@@ -1,0 +1,229 @@
+{
+    "name": "Analyzer",
+    "id": "43",
+    "description": "The Analyzer class identifies the analyzer from which the Alert or Heartbeat message originates.  Only one analyzer may be encoded for each alert or heartbeat, and that MUST be the analyzer at which the alert or heartbeat originated.  Although the IDMEF data model does not prevent the use of hierarchical intrusion detection systems (where alerts get relayed up the tree), it does not provide any way to record the identity of the \"relay\" analyzers along the path from the originating analyzer to the manager that ultimately receives the alert. ",
+    "color": "#FFFF66",
+    "aggregates": {
+        "Node": {
+            "name": "Node",
+            "id": "0",
+            "multiplicity": "0..1",
+            "type": null,
+            "description": "Information about the host or device on which the analyzer resides (network address, network name, etc.)."
+        },
+        "Process": {
+            "name": "Process",
+            "id": "1",
+            "multiplicity": "0..1",
+            "type": null,
+            "description": "Information about the process in which the analyzer is executing."
+        },
+        "AnalyzerTime": {
+            "name": "AnalyzerTime",
+            "id": "11",
+            "multiplicity": "0..1",
+            "type": "DATETIME",
+            "description": "The current time on the analyzer (see Section 6.3)."
+        }
+    },
+    "attributes": {
+        "analyzerid": {
+            "name": "analyzerid",
+            "id": "3",
+            "multiplicity": "Required",
+            "type": "STRING",
+            "description": "A unique identifier for the analyzer; see Section 3.2.9."
+        },
+        "name": {
+            "name": "name",
+            "id": "4",
+            "multiplicity": "Optional",
+            "type": "STRING",
+            "description": "An explicit name for the analyzer that may be easier to understand than the analyzerid."
+        },
+        "manufacturer": {
+            "name": "manufacturer",
+            "id": "5",
+            "multiplicity": "Optional",
+            "type": "STRING",
+            "description": "The manufacturer of the analyzer software and/or hardware."
+        },
+        "model": {
+            "name": "model",
+            "id": "6",
+            "multiplicity": "Optional",
+            "type": "STRING",
+            "description": "The model name/number of the analyzer software and/or hardware."
+        },
+        "version": {
+            "name": "version",
+            "id": "7",
+            "multiplicity": "Optional",
+            "type": "STRING",
+            "description": "The version number of the analyzer software and/or hardware."
+        },
+        "class": {
+            "name": "class",
+            "id": "8",
+            "multiplicity": "Optional",
+            "type": "ENUM",
+            "description": "The class of analyzer software and/or hardware.",
+            "ident": "66",
+            "values": [
+                {
+                    "rank": "0",
+                    "keyword": "unknown",
+                    "description": "Analyzer class is not known"
+                },
+                {
+                    "rank": "1",
+                    "keyword": "ext-class",
+                    "description": "An escape value used to extend this attribute"
+                },
+                {
+                    "rank": "2",
+                    "keyword": "NIDS",
+                    "description": "Network Based Intrusion Detection System analyzer"
+                },
+                {
+                    "rank": "3",
+                    "keyword": "SNIDS",
+                    "description": "When the NIDS perform the analysis using signatures"
+                },
+                {
+                    "rank": "4",
+                    "keyword": "HIDS",
+                    "description": "Host Intrusion Detection System"
+                },
+                {
+                    "rank": "5",
+                    "keyword": "IPS",
+                    "description": "System that block any intrusion pattern at the firewall level"
+                },
+                {
+                    "rank": "6",
+                    "keyword": "File Integrity Checker",
+                    "description": "When the HIDS does files integrity checking"
+                },
+                {
+                    "rank": "7",
+                    "keyword": "Integrity Checker",
+                    "description": "Usually performs integrity checking on files"
+                },
+                {
+                    "rank": "8",
+                    "keyword": "Log Analyzer",
+                    "description": "Analyze logs to extract alerts"
+                },
+                {
+                    "rank": "9",
+                    "keyword": "Network Anti-Virus",
+                    "description": "Network based anti-virus"
+                },
+                {
+                    "rank": "10",
+                    "keyword": "Host Anti-Virus",
+                    "description": "Host based anti-virus"
+                },
+                {
+                    "rank": "11",
+                    "keyword": "Correlator",
+                    "description": "Alerts correlator"
+                },
+                {
+                    "rank": "12",
+                    "keyword": "Firewall",
+                    "description": "Firewall"
+                },
+                {
+                    "rank": "13",
+                    "keyword": "Honeypot",
+                    "description": "Honeypot"
+                },
+                {
+                    "rank": "14",
+                    "keyword": "Software Monitoring",
+                    "description": "Software monitoring program"
+                },
+                {
+                    "rank": "15",
+                    "keyword": "Hardware Monitoring",
+                    "description": "Hardware monitoring program"
+                },
+                {
+                    "rank": "16",
+                    "keyword": "Active Vulnerability Scanner",
+                    "description": "Active vulnerability scanner"
+                },
+                {
+                    "rank": "17",
+                    "keyword": "Passive Vulnerability Scanner",
+                    "description": "Passive vulnerability scanner"
+                },
+                {
+                    "rank": "18",
+                    "keyword": "Alarm Hardware",
+                    "description": "Alarm system for physical intrusions"
+                },
+                {
+                    "rank": "19",
+                    "keyword": "Private Branch Exchange",
+                    "description": "Private branch exchange"
+                }
+            ]
+        },
+        "ext-class": {
+            "name": "ext-class",
+            "id": "11",
+            "multiplicity": "Optional",
+            "type": "STRING",
+            "description": "Escape value to extend the attribute \"class\""
+        },
+        "analyzeraction": {
+            "name": "analyzeraction",
+            "id": "12",
+            "multiplicity": "Required",
+            "type": "ENUM",
+            "description": "The action performed by the analyzer on the alert.",
+            "ident": "67",
+            "values": [
+                {
+                    "rank": "0",
+                    "keyword": "Create",
+                    "description": "The analyzer has created this alert"
+                },
+                {
+                    "rank": "1",
+                    "keyword": "Forward",
+                    "description": "The analyzer has forwarded this alert"
+                },
+                {
+                    "rank": "2",
+                    "keyword": "Edit",
+                    "description": "The analyzer has edited this alert"
+                }
+            ]
+        },
+        "actionhistory": {
+            "name": "actionhistory",
+            "id": "13",
+            "multiplicity": "Optional",
+            "type": "STRING",
+            "description": "In case of modification of the alert, the modified attributes and their values must be stored here."
+        },
+        "ostype": {
+            "name": "ostype",
+            "id": "9",
+            "multiplicity": "Optional",
+            "type": "STRING",
+            "description": "Operating system name.  On POSIX 1003.1 compliant systems, this is the value returned in utsname.sysname by the uname() system call, or the output of the \"uname -s\" command."
+        },
+        "osversion": {
+            "name": "osversion",
+            "id": "10",
+            "multiplicity": "Optional",
+            "type": "STRING",
+            "description": "Operating system version.  On POSIX 1003.1 compliant systems, this is the value returned in utsname.release by the uname() system call, or the output of the \"uname -r\" command."
+        }
+    }
+}

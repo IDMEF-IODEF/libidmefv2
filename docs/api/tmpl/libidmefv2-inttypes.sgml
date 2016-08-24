@@ -1,0 +1,386 @@
+<!-- ##### SECTION Title ##### -->
+libidmefv2-inttypes
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### MACRO LIBIDMEFV2_INT8_MIN ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_INT16_MIN ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_INT32_MIN ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_INT64_MIN ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_INT8_MAX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_INT16_MAX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_INT32_MAX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_INT64_MAX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_UINT8_MAX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_UINT16_MAX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_UINT32_MAX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_UINT64_MAX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_INTMAX_MIN ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_INTMAX_MAX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_UINTMAX_MAX ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRId64 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIi64 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIo64 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIx64 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIX64 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIu64 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRId32 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIi32 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIo32 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIx32 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIX32 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIu32 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRId16 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIi16 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIo16 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIx16 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIX16 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIu16 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRId8 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIi8 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIo8 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIx8 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIX8 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_PRIu8 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_SCNd64 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_SCNi64 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_SCNo64 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_SCNx64 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO LIBIDMEFV2_SCNu64 ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### ENUM libidmefv2_bool_t ##### -->
+<para>
+
+</para>
+
+@LIBIDMEFV2_BOOL_TRUE: 
+@LIBIDMEFV2_BOOL_FALSE: 
+
+<!-- ##### TYPEDEF int8_t ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### TYPEDEF uint8_t ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### TYPEDEF int16_t ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### TYPEDEF uint16_t ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### TYPEDEF int32_t ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### TYPEDEF uint32_t ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### TYPEDEF int64_t ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### TYPEDEF uint64_t ##### -->
+<para>
+
+</para>
+
+

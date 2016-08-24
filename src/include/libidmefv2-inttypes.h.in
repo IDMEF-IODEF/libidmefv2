@@ -1,0 +1,230 @@
+/*****
+*
+* Copyright (C) 2004-2016 CS-SI. All Rights Reserved.
+* Author: Yoann Vandoorselaere <yoann.v@libidmefv2-ids.com>
+*
+* This file is part of the LibIdemfv2 library.
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation; either version 2, or (at your option)
+* any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License along
+* with this program; if not, write to the Free Software Foundation, Inc.,
+* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+*
+*****/
+
+#ifndef _LIBIDMEFV2_INTTYPES_H
+#define _LIBIDMEFV2_INTTYPES_H
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
+/*
+ * Defined by ax_create_libidmefv2_inttypes_h.m4
+ */
+@__LIBIDMEFV2_HAVE_STDINT_H@
+@__LIBIDMEFV2_HAVE_INTTYPES_H@
+@__LIBIDMEFV2_HAVE_64BIT_LONG@
+@__LIBIDMEFV2_STDINT_HAVE_UINT8@
+@__LIBIDMEFV2_STDINT_HAVE_UINT16@
+@__LIBIDMEFV2_STDINT_HAVE_UINT32@
+@__LIBIDMEFV2_STDINT_HAVE_UINT64@
+@__LIBIDMEFV2_64BIT_FORMAT_PREFIX@
+
+#ifdef __LIBIDMEFV2_HAVE_64BIT_LONG
+ #define __LIBIDMEFV2_INT64_SUFFIX(x) x ## L
+ #define __LIBIDMEFV2_UINT64_SUFFIX(x) x ## UL
+#else
+ #define __LIBIDMEFV2_INT64_SUFFIX(x) x ## LL
+ #define __LIBIDMEFV2_UINT64_SUFFIX(x) x ##ULL
+#endif
+
+#ifdef HAVE_CONFIG_H
+# include "config.h"
+#endif
+
+#ifdef __LIBIDMEFV2_HAVE_STDINT_H
+# include <stdint.h>
+#endif
+
+#ifdef __LIBIDMEFV2_HAVE_INTTYPES_H
+# include <inttypes.h>
+#endif
+
+#include <limits.h>
+
+#ifndef TRUE
+# define TRUE 1
+#endif
+
+#ifndef FALSE
+# define FALSE 0
+#endif
+
+
+
+/*
+ * Minimum of signed integral types.
+ */
+#define LIBIDMEFV2_INT8_MIN               (-128)
+#define LIBIDMEFV2_INT16_MIN              (-32767 - 1)
+#define LIBIDMEFV2_INT32_MIN              (-2147483647 - 1)
+#define LIBIDMEFV2_INT64_MIN              (-__LIBIDMEFV2_INT64_SUFFIX(9223372036854775807) - 1)
+
+
+
+/*
+ * Maximum of signed integral types.
+ */
+#define LIBIDMEFV2_INT8_MAX               (127)
+#define LIBIDMEFV2_INT16_MAX              (32767)
+#define LIBIDMEFV2_INT32_MAX              (2147483647)
+#define LIBIDMEFV2_INT64_MAX              (__LIBIDMEFV2_INT64_SUFFIX(9223372036854775807))
+
+
+/*
+ * Maximum of unsigned integral types.
+ */
+#define LIBIDMEFV2_UINT8_MAX              (255)
+#define LIBIDMEFV2_UINT16_MAX             (65535)
+#define LIBIDMEFV2_UINT32_MAX             (4294967295U)
+#define LIBIDMEFV2_UINT64_MAX             (__LIBIDMEFV2_UINT64_SUFFIX(18446744073709551615))
+
+
+/*
+ * Other
+ */
+#define LIBIDMEFV2_INTMAX_MIN             INT64_MIN
+#define LIBIDMEFV2_INTMAX_MAX             INT64_MAX
+#define LIBIDMEFV2_UINTMAX_MAX            UINT64_MAX
+
+
+/*
+ * Tandem NonStop R series and compatible platforms released before
+ * July 2005 support %Ld but not %lld.
+ */
+# if defined _TNS_R_TARGET
+#  define _LONG_LONG_FORMAT_PREFIX "L"
+# else
+#  define _LONG_LONG_FORMAT_PREFIX "ll"
+# endif
+
+#if LIBIDMEFV2_INT64_MAX == LONG_MAX
+# define __LIBIDMEFV2_64BIT_FORMAT_PREFIX "l"
+#elif defined _MSC_VER || defined __MINGW32__
+# define __LIBIDMEFV2_64BIT_FORMAT_PREFIX "I64"
+#elif @HAVE_LONG_LONG_INT@ && LONG_MAX >> 30 == 1
+# define __LIBIDMEFV2_64BIT_FORMAT_PREFIX _LONG_LONG_FORMAT_PREFIX
+#endif
+
+
+
+/*
+ * format specifier
+ */
+#define LIBIDMEFV2_PRId64      __LIBIDMEFV2_64BIT_FORMAT_PREFIX "d"
+#define LIBIDMEFV2_PRIi64      __LIBIDMEFV2_64BIT_FORMAT_PREFIX "i"
+#define LIBIDMEFV2_PRIo64      __LIBIDMEFV2_64BIT_FORMAT_PREFIX "o"
+#define LIBIDMEFV2_PRIx64      __LIBIDMEFV2_64BIT_FORMAT_PREFIX "x"
+#define LIBIDMEFV2_PRIX64      __LIBIDMEFV2_64BIT_FORMAT_PREFIX "X"
+#define LIBIDMEFV2_PRIu64      __LIBIDMEFV2_64BIT_FORMAT_PREFIX "u"
+
+#define LIBIDMEFV2_PRId32      "d"
+#define LIBIDMEFV2_PRIi32      "i"
+#define LIBIDMEFV2_PRIo32      "o"
+#define LIBIDMEFV2_PRIx32      "x"
+#define LIBIDMEFV2_PRIX32      "X"
+#define LIBIDMEFV2_PRIu32      "u"
+
+#define LIBIDMEFV2_PRId16      "d"
+#define LIBIDMEFV2_PRIi16      "i"
+#define LIBIDMEFV2_PRIo16      "o"
+#define LIBIDMEFV2_PRIx16      "x"
+#define LIBIDMEFV2_PRIX16      "X"
+#define LIBIDMEFV2_PRIu16      "u"
+
+#define LIBIDMEFV2_PRId8       "d"
+#define LIBIDMEFV2_PRIi8       "i"
+#define LIBIDMEFV2_PRIo8       "o"
+#define LIBIDMEFV2_PRIx8       "x"
+#define LIBIDMEFV2_PRIX8       "X"
+#define LIBIDMEFV2_PRIu8       "u"
+
+#define LIBIDMEFV2_SCNd64      __LIBIDMEFV2_64BIT_FORMAT_PREFIX "d"
+#define LIBIDMEFV2_SCNi64      __LIBIDMEFV2_64BIT_FORMAT_PREFIX "i"
+#define LIBIDMEFV2_SCNo64      __LIBIDMEFV2_64BIT_FORMAT_PREFIX "o"
+#define LIBIDMEFV2_SCNx64      __LIBIDMEFV2_64BIT_FORMAT_PREFIX "x"
+#define LIBIDMEFV2_SCNu64      __LIBIDMEFV2_64BIT_FORMAT_PREFIX "u"
+
+#define LIBIDMEFV2_SCNd32      "d"
+#define LIBIDMEFV2_SCNi32      "i"
+#define LIBIDMEFV2_SCNo32      "o"
+#define LIBIDMEFV2_SCNx32      "x"
+#define LIBIDMEFV2_SCNu32      "u"
+
+#define LIBIDMEFV2_SCNd16      "hd"
+#define LIBIDMEFV2_SCNi16      "hi"
+#define LIBIDMEFV2_SCNo16      "ho"
+#define LIBIDMEFV2_SCNx16      "hx"
+#define LIBIDMEFV2_SCNu16      "hu"
+
+#define LIBIDMEFV2_SCNd8       "hhd"
+#define LIBIDMEFV2_SCNi8       "hhi"
+#define LIBIDMEFV2_SCNo8       "hho"
+#define LIBIDMEFV2_SCNx8       "hhx"
+#define LIBIDMEFV2_SCNu8       "hhu"
+
+
+/*
+ * Type definition
+ */
+typedef enum {
+        LIBIDMEFV2_BOOL_TRUE = TRUE,
+        LIBIDMEFV2_BOOL_FALSE = FALSE
+} libidmefv2_bool_t;
+
+
+#ifndef __LIBIDMEFV2_STDINT_HAVE_UINT8
+ typedef signed char int8_t;
+ typedef unsigned char uint8_t;
+#endif
+
+
+#ifndef __LIBIDMEFV2_STDINT_HAVE_UINT16
+ typedef short int16_t;
+ typedef unsigned short uint16_t;
+#endif
+
+#ifndef __LIBIDMEFV2_STDINT_HAVE_UINT32
+ typedef int int32_t;
+ typedef unsigned int uint32_t;
+#endif
+
+#ifndef __LIBIDMEFV2_STDINT_HAVE_UINT64
+# ifdef __LIBIDMEFV2_HAVE_64BIT_LONG
+
+  typedef long int64_t;
+  typedef unsigned long uint64_t;
+
+# else
+
+  typedef long long int64_t;
+  typedef unsigned long long uint64_t;
+
+# endif
+#endif
+
+#ifdef __cplusplus
+ }
+#endif
+
+#endif /* _LIBIDMEFV2_INTTYPES_H */

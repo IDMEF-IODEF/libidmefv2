@@ -1,0 +1,142 @@
+{
+    "name": "RecommandedAction",
+    "id": "56",
+    "description": "The RecommandedaAction class is used to describe any actions taken by the analyzer in response to the event.  Is is represented in the IDMEF DTD as follows: ",
+    "color": "#FF5024",
+    "aggregates": {
+    },
+    "attributes": {
+        "action": {
+            "name": "action",
+            "id": "0",
+            "multiplicity": "Required",
+            "type": "ENUM",
+            "description": "The default value is \"other\".  (See also Section 10.)",
+            "ident": "68",
+            "values": [
+                {
+                    "rank": "0",
+                    "keyword": "Nothing",
+                    "description": "No action is requested. Do nothing with the information."
+                },
+                {
+                    "rank": "1",
+                    "keyword": "Contact-source-site",
+                    "description": "Contact the site(s) identified as the source of the activity"
+                },
+                {
+                    "rank": "2",
+                    "keyword": "Contact-target-site",
+                    "description": "Contact the site(s) identified as the target of the activity."
+                },
+                {
+                    "rank": "3",
+                    "keyword": "Contact-sender",
+                    "description": "Contact the originator of the document."
+                },
+                {
+                    "rank": "4",
+                    "keyword": "Investigate",
+                    "description": "Investigate the systems(s) listed in the event."
+                },
+                {
+                    "rank": "5",
+                    "keyword": "Block-host",
+                    "description": "Block traffic from the machine(s) listed as sources the event."
+                },
+                {
+                    "rank": "6",
+                    "keyword": "Block-network",
+                    "description": "Block traffic from the network(s) lists as sources in the event."
+                },
+                {
+                    "rank": "7",
+                    "keyword": "Block-port",
+                    "description": "Block the port listed as sources in the event."
+                },
+                {
+                    "rank": "8",
+                    "keyword": "Rate-limit-host",
+                    "description": "Rate-limit the traffic from the machine(s) listed as sources in the event."
+                },
+                {
+                    "rank": "9",
+                    "keyword": "Rate-limit-network",
+                    "description": "Rate-limit the traffic from the network(s) lists as sources in the event."
+                },
+                {
+                    "rank": "10",
+                    "keyword": "Rate-limit-port",
+                    "description": "Rate-limit the port(s) listed as sources in the event."
+                },
+                {
+                    "rank": "11",
+                    "keyword": "Redirect-traffic",
+                    "description": "Redirect traffic from the intended recipient for further analysis."
+                },
+                {
+                    "rank": "12",
+                    "keyword": "Honeypot",
+                    "description": "Redirect traffic from systems listed in the event to a honeypot for further analysis."
+                },
+                {
+                    "rank": "13",
+                    "keyword": "Upgrade-software",
+                    "description": "Upgrade or patch the software or firmware on an asset listed in the event."
+                },
+                {
+                    "rank": "14",
+                    "keyword": "Rebuild-asset",
+                    "description": "Reinstall the operating system or applications on an asset listed in the event."
+                },
+                {
+                    "rank": "15",
+                    "keyword": "Harden-asset",
+                    "description": "Change the configuration an asset listed in the event to reduce the attack surface."
+                },
+                {
+                    "rank": "16",
+                    "keyword": "Remediate-other",
+                    "description": "Remediate the activity in a way other than by rate limiting or blocking."
+                },
+                {
+                    "rank": "17",
+                    "keyword": "Status-triage",
+                    "description": "Confirm receipt and begin triaging the incident."
+                },
+                {
+                    "rank": "18",
+                    "keyword": "Status-new-info",
+                    "description": "Notify the sender when new information is received for this incident."
+                },
+                {
+                    "rank": "19",
+                    "keyword": "Watch-and-report",
+                    "description": "Watch for the described activity or indicators; and notify the sender when seen."
+                },
+                {
+                    "rank": "20",
+                    "keyword": "Training",
+                    "description": "Train user to identify or mitigate the described threat."
+                },
+                {
+                    "rank": "21",
+                    "keyword": "Other",
+                    "description": "Perform a custom action."
+                },
+                {
+                    "rank": "22",
+                    "keyword": "Ext-value",
+                    "description": "An escape value used to extend this attribute."
+                }
+            ]
+        },
+        "step": {
+            "name": "step",
+            "id": "1",
+            "multiplicity": "Optional",
+            "type": "INTEGER",
+            "description": "Step action number, in case of multiple steps to follow"
+        }
+    }
+}

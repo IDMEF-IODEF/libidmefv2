@@ -1,0 +1,92 @@
+{
+    "name": "UserId",
+    "id": "7",
+    "description": "The UserId class provides specific information about a user.  More than one UserId can be used within the User class to indicate attempts to transition from one user to another, or to provide complete information about a user's (or process') privileges. ",
+    "color": "#66CCFF",
+    "aggregates": {
+        "name": {
+            "name": "name",
+            "id": "0",
+            "multiplicity": "0..1",
+            "type": "STRING",
+            "description": "A user or group name."
+        },
+        "number": {
+            "name": "number",
+            "id": "1",
+            "multiplicity": "0..1",
+            "type": "INTEGER",
+            "description": "A user or group number."
+        }
+    },
+    "attributes": {
+        "ident": {
+            "name": "ident",
+            "id": "2",
+            "multiplicity": "Optional",
+            "type": "STRING",
+            "description": "A unique identifier for the user id, see Section 3.2.9."
+        },
+        "category": {
+            "name": "category",
+            "id": "3",
+            "multiplicity": "Optional",
+            "type": "ENUM",
+            "description": "The type of user information represented.  The permitted values for this attribute are shown below.  The default value is \"original-user\".  (See also Section 10.)",
+            "values": [
+                {
+                    "rank": "0",
+                    "keyword": "current-user",
+                    "description": "The current user id being used by the user or process. On Unix systems"
+                },
+                {
+                    "rank": "1",
+                    "keyword": "original-user",
+                    "description": "The actual identity of the user or process being reported on. On those systems that (a) do some type of auditing and (b) support extracting a user id from the “audit id” token"
+                },
+                {
+                    "rank": "2",
+                    "keyword": "target-user",
+                    "description": "The user id the user or process is attempting to become. This would apply"
+                },
+                {
+                    "rank": "3",
+                    "keyword": "current-group",
+                    "description": "The current group id being used by the user or process. On Unix systems"
+                },
+                {
+                    "rank": "4",
+                    "keyword": "original-group",
+                    "description": "The actual identity of the group or process being reported on. On those systems that (a) do some type of auditing and (b) support extracting a group id from the “audit id” token"
+                },
+                {
+                    "rank": "5",
+                    "keyword": "target-group",
+                    "description": "The group id the user or process is attempting to become. This would apply"
+                },
+                {
+                    "rank": "6",
+                    "keyword": "user-privs",
+                    "description": "User id associated with a file permission. On Unix systems"
+                },
+                {
+                    "rank": "7",
+                    "keyword": "group-privs",
+                    "description": "Group id associated with a file permission. On Unix systems"
+                },
+                {
+                    "rank": "8",
+                    "keyword": "other-privs",
+                    "description": "The file permissions assigned to users who do not match either the user or group permissions on the file. On Unix systems"
+                }
+            ]
+        },
+        "tty": {
+            "name": "tty",
+            "id": "4",
+            "multiplicity": "Optional",
+            "type": "STRING",
+            "description": "The tty the user is using."
+        }
+    }
+}

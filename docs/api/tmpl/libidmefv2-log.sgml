@@ -1,0 +1,145 @@
+<!-- ##### SECTION Title ##### -->
+libidmefv2-log
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM libidmefv2_log_t ##### -->
+<para>
+
+</para>
+
+@LIBIDMEFV2_LOG_CRIT: 
+@LIBIDMEFV2_LOG_ERR: 
+@LIBIDMEFV2_LOG_WARN: 
+@LIBIDMEFV2_LOG_INFO: 
+@LIBIDMEFV2_LOG_DEBUG: 
+
+<!-- ##### ENUM libidmefv2_log_flags_t ##### -->
+<para>
+
+</para>
+
+@LIBIDMEFV2_LOG_FLAGS_QUIET: 
+@LIBIDMEFV2_LOG_FLAGS_SYSLOG: 
+
+<!-- ##### MACRO libidmefv2_log ##### -->
+<para>
+
+</para>
+
+@level: 
+@...: 
+
+
+<!-- ##### MACRO libidmefv2_log_debug ##### -->
+<para>
+
+</para>
+
+@level: 
+@...: 
+
+
+<!-- ##### MACRO libidmefv2_log_v ##### -->
+<para>
+
+</para>
+
+@level: 
+@fmt: 
+@ap: 
+
+
+<!-- ##### MACRO libidmefv2_log_debug_v ##### -->
+<para>
+
+</para>
+
+@level: 
+@fmt: 
+@ap: 
+
+
+<!-- ##### FUNCTION libidmefv2_log_set_level ##### -->
+<para>
+
+</para>
+
+@level: 
+
+
+<!-- ##### FUNCTION libidmefv2_log_set_debug_level ##### -->
+<para>
+
+</para>
+
+@level: 
+
+
+<!-- ##### FUNCTION libidmefv2_log_get_flags ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION libidmefv2_log_set_flags ##### -->
+<para>
+
+</para>
+
+@flags: 
+
+
+<!-- ##### FUNCTION libidmefv2_log_get_prefix ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION libidmefv2_log_set_prefix ##### -->
+<para>
+
+</para>
+
+@prefix: 
+
+
+<!-- ##### FUNCTION libidmefv2_log_set_callback ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION libidmefv2_log_set_logfile ##### -->
+<para>
+
+</para>
+
+@filename: 
+@Returns: 
+
+

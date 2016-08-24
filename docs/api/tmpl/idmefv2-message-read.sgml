@@ -1,0 +1,352 @@
+<!-- ##### SECTION Title ##### -->
+idmefv2-message-read
+
+<!-- ##### SECTION Short_Description ##### -->
+
+Reading a message from a #libidmefv2_msg_t buffer
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+Once you read a #libidmefv2_msg_t object, you need to decode this message.
+In case this is an IDMEFV2 style message, the following API allow to read
+the relevant IDMEFV2 fields from the #libidmefv2_msg_t object, and create the
+IDMEFV2 object from it's content.
+
+</para>
+
+<para>
+
+The function you're most probably looking to use is idmefv2_message_read(), and here
+is an example on how to use it:
+
+<programlisting>
+int ret;
+libidmefv2_msg_t *pmsg;
+idmefv2_message_t *message;
+
+pmsg = whatever_method_to_get_a_libidmefv2_msg();
+
+ret = idmefv2_message_new(&amp;message);
+if ( ret &lt; 0 )
+        return ret;
+
+ret = idmefv2_message_read(message, pmsg);
+</programlisting>
+
+This will decode the full IDMEFV2 message stored within pmsg into the #idmefv2_message_t
+IDMEFV2 object and it's childrens.
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION idmefv2_additional_data_read ##### -->
+<para>
+
+</para>
+
+@additional_data: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_reference_read ##### -->
+<para>
+
+</para>
+
+@reference: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_classification_read ##### -->
+<para>
+
+</para>
+
+@classification: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_user_id_read ##### -->
+<para>
+
+</para>
+
+@user_id: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_user_read ##### -->
+<para>
+
+</para>
+
+@user: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_address_read ##### -->
+<para>
+
+</para>
+
+@address: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_process_read ##### -->
+<para>
+
+</para>
+
+@process: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_web_service_read ##### -->
+<para>
+
+</para>
+
+@web_service: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_snmp_service_read ##### -->
+<para>
+
+</para>
+
+@snmp_service: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_service_read ##### -->
+<para>
+
+</para>
+
+@service: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_node_read ##### -->
+<para>
+
+</para>
+
+@node: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_source_read ##### -->
+<para>
+
+</para>
+
+@source: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_file_access_read ##### -->
+<para>
+
+</para>
+
+@file_access: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_inode_read ##### -->
+<para>
+
+</para>
+
+@inode: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_checksum_read ##### -->
+<para>
+
+</para>
+
+@checksum: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_file_read ##### -->
+<para>
+
+</para>
+
+@file: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_linkage_read ##### -->
+<para>
+
+</para>
+
+@linkage: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_target_read ##### -->
+<para>
+
+</para>
+
+@target: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_analyzer_read ##### -->
+<para>
+
+</para>
+
+@analyzer: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_alertident_read ##### -->
+<para>
+
+</para>
+
+@alertident: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_impact_read ##### -->
+<para>
+
+</para>
+
+@impact: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_action_read ##### -->
+<para>
+
+</para>
+
+@action: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_confidence_read ##### -->
+<para>
+
+</para>
+
+@confidence: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_assessment_read ##### -->
+<para>
+
+</para>
+
+@assessment: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_tool_alert_read ##### -->
+<para>
+
+</para>
+
+@tool_alert: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_correlation_alert_read ##### -->
+<para>
+
+</para>
+
+@correlation_alert: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_overflow_alert_read ##### -->
+<para>
+
+</para>
+
+@overflow_alert: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_alert_read ##### -->
+<para>
+
+</para>
+
+@alert: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_heartbeat_read ##### -->
+<para>
+
+</para>
+
+@heartbeat: 
+@msg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION idmefv2_message_read ##### -->
+<para>
+
+</para>
+
+@message: 
+@msg: 
+@Returns: 
+
+
